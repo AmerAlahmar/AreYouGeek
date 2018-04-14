@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="top"
+    android:padding="16dp"
+    tools:context=".WelcomeActivity">
+
+    <ImageView
+        android:id="@+id/areYouImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/areYou"
+        android:scaleType="centerInside"
+        android:src="@drawable/are_you" />
+
+    <ImageView
+        android:id="@+id/geekImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/areYouImageView"
+        android:contentDescription="@string/geek"
+        android:paddingBottom="8dp"
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/geek" />
+
+    <TextView
+        android:id="@+id/takeTheQuizAndFindOutTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/geekImageView"
+        android:layout_marginTop="16dp"
+        android:text="@string/takeTheQuizAndFindOut"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:id="@+id/descriptionLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/takeTheQuizAndFindOutTextView"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="start"
+            android:text="@string/tenMarksForTenQuestions"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:text="@string/difficultyIncrease"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:text="@string/allTheQuestionsMustBeAnswered"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
+        android:text="@string/start"
+        android:textSize="20sp" />
+</RelativeLayout>

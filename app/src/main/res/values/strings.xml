@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Are You Geek?</string>
+    <string name="takeTheQuizAndFindOut">TAKE THE QUIZ AND FIND OUT</string>
+    <string name="tenMarksForTenQuestions">- 10 Marks for 10 Questions.</string>
+    <string name="difficultyIncrease">- Difficulty incrementally increase as questions pass.</string>
+    <string name="allTheQuestionsMustBeAnswered">- All the questions must be answered because that\'s what a geek will do.</string>
+    <string name="geek">Geek?</string>
+    <string name="areYou">Are You</string>
+    <string name="start">Start</string>
+    <string name="areYouGeek">Are You GEEK?</string>
+    <string name="submit">Submit</string>
+    <string name="restart">Restart</string>
+    <string name="youScored">You Scored:</string>
+    <string name="outOf">Out OF</string>
+</resources>
