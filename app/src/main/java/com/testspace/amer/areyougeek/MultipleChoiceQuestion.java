@@ -6,6 +6,7 @@ import java.util.Collections;
 
 public class MultipleChoiceQuestion implements Serializable { // Serialized to pass it with ***Intent***
     private String question; //The Question text
+    private int questionTextViewId;//The id of the question TextView
     private ArrayList<String> options = new ArrayList<>(); // The Answer Options
     private int indexOfCorrectAnswer; //The Index of the correct Answer ** IN options ArrayList**
     private String userAnswer; //The text of chosen option by the user
@@ -22,13 +23,21 @@ public class MultipleChoiceQuestion implements Serializable { // Serialized to p
         return question;
     }
 
+    public int getQuestionTextViewId() {
+        return questionTextViewId;
+    }
+
+    public void setQuestionTextViewId(int questionTextViewId) {
+        this.questionTextViewId = questionTextViewId;
+    }
+
     //returns all options as ArrayList
     public ArrayList<String> getOptions() {
         return options;
     }
 
     //returns the indexOfCorrectAnswer as Integer
-    public int getIndexOfCorrectAnswer() {
+    private int getIndexOfCorrectAnswer() {
         return indexOfCorrectAnswer;
     }
 

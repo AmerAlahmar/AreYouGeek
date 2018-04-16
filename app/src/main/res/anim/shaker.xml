@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--******** Rotate (SHAKE) from the center infinitely ********-->
+<?xml version="1.0" encoding="utf-8"?><!--******** Rotate (SHAKE) from the center infinitely ********-->
 <set xmlns:android="http://schemas.android.com/apk/res/android">
     <rotate
         android:duration="400"
