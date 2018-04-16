@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -20,6 +21,7 @@ public class SubmitActivity extends AppCompatActivity {
     ArrayList<MultipleChoiceQuestion> multipleChoiceQuestions = new ArrayList<>();
     ArrayList<CheckBoxesQuestion> checkBoxesQuestions = new ArrayList<>();
     ArrayList<FreeWriteQuestion> freeWriteQuestions = new ArrayList<>();
+    int totalScore = 0;// the total number of all questions.
     int userScore = 0;//to keep track of user Scores to display it later.
 
     @Override
@@ -36,13 +38,15 @@ public class SubmitActivity extends AppCompatActivity {
         checkBoxesQuestions = (ArrayList<CheckBoxesQuestion>) getIntent().getSerializableExtra("CHECKBOXESQUESTION");
         freeWriteQuestions = (ArrayList<FreeWriteQuestion>) getIntent().getSerializableExtra("FREEWRITEQUESTION");
         //calculate the total scores.
-        totalScoreTextView.setText(String.valueOf(multipleChoiceQuestions.size() + checkBoxesQuestions.size() + freeWriteQuestions.size()));
+        totalScore = multipleChoiceQuestions.size() + checkBoxesQuestions.size() + freeWriteQuestions.size();
+        totalScoreTextView.setText(String.valueOf(totalScore));
         //go throw all questions and display them with the options
         displayMultipleChoicesQuestionsResults();
         displayCheckBoxesQuestionsResults();
         displayFreeWriteQuestionsResults();
-        //display userScore.
+        //display userScore and Show toast.
         userScoreTextView.setText(String.valueOf(userScore));
+        displayResultsToast();
         //when reset button clicked do:
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,5 +154,24 @@ public class SubmitActivity extends AppCompatActivity {
             }
         }
         return true;
+    }
+
+    private void displayResultsToast() {
+        String toastMessage = "You Scored: ";
+        String extraMessage;
+        toastMessage = toastMessage.concat(String.valueOf(userScore));
+        toastMessage = toastMessage.concat(" OutOf ");
+        toastMessage = toastMessage.concat(String.valueOf(totalScore));
+
+        if (userScore > totalScore / 2) {
+            extraMessage = " You are Geek!";
+            if (userScore > (totalScore * 0.75)) {
+                extraMessage = " You are SUPER GEEK!";
+            }
+        } else {
+            extraMessage = " SORRY you are not geek!";
+        }
+        toastMessage = toastMessage.concat(extraMessage);
+        Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show();
     }
 }
